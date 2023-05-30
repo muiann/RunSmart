@@ -12,7 +12,9 @@
         height: 270px;
         background: $main-color;
         padding: 50px 53px 56px 53px;
-    } 
+        
+        }
+    
     &__addr{
         font-weight: 500;
         font-size: 20px;
@@ -42,5 +44,4 @@
     &__social-item{
         margin: 0 13px;
     }
-      
-}
+} 

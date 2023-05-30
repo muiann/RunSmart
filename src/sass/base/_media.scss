@@ -34,7 +34,49 @@
             padding: 0 10px;
         }
     }
- }
+    .carousel{
+        &__inner{
+           
+            ul{
+                list-style-type: none; 
+                display: flex;
+                flex-direction: row;
+                margin: 0 35px;
+                justify-content: center;
+                li{
+                    button{
+                        border: none;
+                        background-color: #fff;
+                        color: $main-color;
+                        font-weight: 500;
+                    }
+                    
+                }
+                
+            }                    
+        }
+    }    
+     
+    .catalog{
+            &__content{
+                margin: 0 35px;
+            align-items: left;
+            }
+    }
+    .reviews{
+        margin: 0 25px ;
+        img{
+            margin-right: 30px;
+        }
+
+    }
+         
+        
+}
+
+   
+
+ 
 
 
 @media  (max-width: 767px){
@@ -105,6 +147,52 @@
         padding: 0 10px;
     }
 }
+.carousel{
+    &__inner{
+        
+        max-width: 100%;
+        margin:  auto;
+       div{
+        justify-content: center;
+            img{
+                margin: 0 100px;
+                width: 450px;
+        }
+       
+       }
+        ul{
+            width: 50%;
+            list-style-type: none; 
+            display: flex;
+            flex-direction: row;
+            margin: 0 35px;
+            justify-content: center;
+            li{
+                button{
+                    border: none;
+                    background-color: #fff;
+                    color: $main-color;
+                    font-weight: 500;
+                }
+                
+            }
+            
+        }                    
+    }
+}  
+
+.catalog{
+    .title{
+        font-size: 30px;
+    }
+    &__tabs{
+        flex-direction: column;            
+    }
+    &-item{ 
+        margin: 0 auto;
+    }
+
+}  
     
 }
 
@@ -193,4 +281,96 @@
             padding: 0 10px;
         }
     }
+    .carousel{
+        &__inner{
+            
+            max-width: 100%;
+            margin:  auto;
+           div{
+            justify-content: center;
+                img{
+                    margin: 0 50px;
+                    width: 450px;
+            }
+           
+           }
+            ul{
+                width: 50%;
+                list-style-type: none; 
+                display: flex;
+                flex-direction: row;
+                margin: 0 35px;
+                justify-content: center;
+                li{
+                    button{
+                        border: none;
+                        background-color: #fff;
+                        color: $main-color;
+                        font-weight: 500;
+                    }
+                    
+                }
+                
+            }                    
+        }
+    }  
+    .catalog{
+        .title{
+            font-size: 25px;
+        }
+        &__tabs{
+            flex-direction: column;            
+        }
+        &__content{ 
+            justify-content: center;
+        }
+
+    }    
+
+    .reviews{
+        &__card{
+            display: block;
+            flex-direction: column;
+            justify-content: center;
+            align-items:center;
+        }
+        margin: 0 25px ;
+        img{
+            margin-right: 30px;
+        }
+        &__title{
+            align-items:center;
+        }
+
+    }
+
+    .footer{
+        .footer__info{
+            width: 360px;
+            height: 170px;
+            padding: 10px 13px 16px 13px;
+        }
+        .footer__addr{
+            display: block;
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+        .footer__phone{
+            font-style: 15px;
+            line-height: 15px;
+        }
+        .footer_social{
+            margin: 0 10px;
+            width: 150px;
+            height: 52px;
+        }
+        .footer__social-item{
+            img{
+                width: 40px;
+                height: 40px;
+
+            }
+        }
+    }
+     
 }

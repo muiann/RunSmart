@@ -1,9 +1,3 @@
-// function defaultTask(cb) {
-//     // place code for your default task here
-//     cb();
-//   }
-  
-//   exports.default = defaultTask
 
 const gulp = require('gulp');
 const browserSync = require('browser-sync');
@@ -29,7 +23,7 @@ gulp.task('styles', function() {
         .pipe(rename({suffix: '.min', prefix: ''}))
         .pipe(autoprefixer())
         .pipe(cleanCSS({compatibility: 'ie8'}))
-        .pipe(gulp.dest("src/css"))
+        .pipe(gulp.dest('src/css/'))
         .pipe(browserSync.stream());
 });
 
