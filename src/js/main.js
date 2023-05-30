@@ -48,11 +48,40 @@ $(document).ready(function(){
 
       $('.button_mini').each(function(i){
         $(this).on('click', function(){
-          $('#order .modal_descr').text($('.catalog-item__subtitle').eq(i).text());
+          $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
           $('.overlay, #order').fadeIn('slow');
 
         })
       });
       
+     
+
+      function valideForms(form){
+        $(form).validate({
+          rules: {
+            name: "required",
+            phone: "required",
+            email: {
+              requireed: true,
+              email: true
+            }
+          },
+          messages: {
+            name: "Пожалуйста, введите свое имя",
+            phone: "Пожалуйста, введите свой телефон",
+            email: {
+              required: "Пожалуйста, введите свою почту",
+              email: "Неправильно введен адрес почты name@domain.com"
+            }
+          }
+        });
+
+      };
+
+      valideForms('#consultation-form');
+      valideForms('#consultation form');
+      valideForms('#order form');
+      
+
   });
 
