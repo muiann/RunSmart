@@ -1,4 +1,6 @@
 @import '../sass/base/variables';
+// @import 'animate.css';
+@import 'base/animation';
 
 * {
     font-family: 'Museo Moderno', sans-serif;
@@ -24,6 +26,7 @@
 @import 'blocks/footer';
 @import 'blocks/modals';
 @import 'blocks/pageup';
+
 
 
 

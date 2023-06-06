@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="css/style.min.css">
     <title>RunSmart</title>
 
@@ -72,7 +73,7 @@
             <h2 class="title">НАШИ ПРЕИМУЩЕСТВА</h2>
             <div class="advantages__blocks">
                 <div class="advantages__block">
-                    <img src="icons/cup.png" alt="cup">
+                    <img src="icons/cup.png" alt="cup" class="advantages__icon ">
                     <div  class="advantages__subtitle">
                         Делимся опытом
                     </div>
@@ -82,7 +83,7 @@
                  </div>
                     
                 <div class="advantages__block">
-                    <img src="icons/heart.png" alt="heart">
+                    <img src="icons/heart.png" alt="heart" class="advantages__icon advantages__icon_animated" >
                     <div class="advantages__subtitle">Заботимся о здоровье</div>
                     <div class="advantages__descr">
                         Мы работаем для того, <br> чтобы Ваши занятия спортом шли на пользу Вашему здоровью и были в радость Вам и Вашим близким!
@@ -431,7 +432,7 @@
     
     <div class="reviews__cards">
         <div class="wrapper">
-            <div class="reviews__card">
+            <div class="reviews__card wow animate__animated animate__fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.5s">
                 <img src="icons/otziv1.png" alt="image">
                 <div class="reviews__title">
                     <div class="reviews__subtitle">Ирина Иванченко <br>
@@ -441,7 +442,7 @@
                         Спасибо, RunSmart! </div>
                 </div>
             </div>
-            <div class="reviews__card">
+            <div class="reviews__card wow animate__animated animate__fadeInUp" data-wow-duration="1.4s" data-wow-delay="0.7s">
                 <img src="icons/otziv2.png" alt="img">
                 <div class="reviews__title">
                     <div class="reviews__subtitle">Иван Сёмочкин <br>
@@ -451,7 +452,7 @@
                 </div>
                 
             </div>
-            <div class="reviews__card">
+            <div class="reviews__card wow animate__animated animate__fadeInUp" data-wow-duration="1.5s" data-wow-delay="0.9s">
                 <img src="icons/otziv3.png" alt="image">
                 <div class="reviews__title">
                     <div class="reviews__subtitle">Юлия Дашкина <br>
@@ -522,7 +523,7 @@
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>   
 <script src="js/slick.min.js"></script> 
 <script src="js/jquery.validate.min.js"></script>
-
+<script src="js/wow.min.js"></script>
 <script src="js/main.js"></script>
 
 </body>
