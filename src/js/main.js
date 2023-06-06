@@ -39,27 +39,29 @@ $(document).ready(function(){
       //Modal
 
       $('[data-modal=consultation]').on('click', function(){
-        $('.overlay, #consultation').fadeIn();
-      } );
+        $('.overlay, #consultation').fadeIn('slow');
+      });
       $('.modal__close').on('click', function(){
         $('.overlay, #consultation, #thanks, #order').fadeOut('slow');
       });
      
 
-      $('.button_mini').each(function(i){
-        $(this).on('click', function(){
+      $('.button_mini').each(function(i) {
+        $(this).on('click', function() {
           $('#order .modal__descr').text($('.catalog-item__subtitle').eq(i).text());
           $('.overlay, #order').fadeIn('slow');
-
         })
       });
       
      
 
-      function valideForms(form){
+      function valideForms(form) {
         $(form).validate({
           rules: {
-            name: "required",
+            name: {
+              required: true,
+              minlength: 2
+            },
             phone: "required",
             email: {
               requireed: true,
@@ -67,11 +69,14 @@ $(document).ready(function(){
             }
           },
           messages: {
-            name: "Пожалуйста, введите свое имя",
+            name: {
+              required: "Пожалуйста, введите свое имя",
+              minlength: jQuery.validator.format("Введите {0} символа!")
+            },
             phone: "Пожалуйста, введите свой телефон",
             email: {
               required: "Пожалуйста, введите свою почту",
-              email: "Неправильно введен адрес почты name@domain.com"
+              email: "Неправильно введен адрес почты, попробуйте формат name@domain.com"
             }
           }
         });
@@ -82,6 +87,42 @@ $(document).ready(function(){
       valideForms('#consultation form');
       valideForms('#order form');
       
+      $('form').submit(function(e) {
+        e.preventDefault();
 
+        if (!$(this).valid()) {
+          return;
+        }
+
+        $.ajax({
+          type: "POST",
+          url: "../mailer/smart.php",
+          data: $(this).serialize()
+        }).done(function() {
+          $(this).find("input").val("");
+          $('#consultation, #order').fadeOut();
+          $('.overlay, #thanks').fadeIn('slow');
+
+          $('form').trigger('reset');
+        });
+        return false; 
+      });
+
+      //Smooth scroll and pageup
+
+      $(window).scroll(function(){
+        if ($(this).scrollTop() > 1600) {
+          $('.pageup').fadeIn();
+        } else {
+          $('.pageup').fadeOut();
+        }
+      });
+
+
+      $("a[href^='#']").click(function() {
+        const _href = $(this).attr("href");
+        $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+        return false;
+      });
   });
 
