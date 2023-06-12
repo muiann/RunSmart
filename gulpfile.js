@@ -55,11 +55,11 @@ gulp.task('mailer', function () {
     .pipe(gulp.dest("dist/mailer"));
 });
 
-gulp.task('img', function () {
+gulp.task('images', function () {
     return gulp.src("src/img/**/*")
     .pipe(imagemin())
     .pipe(gulp.dest("dist/img"));
 });
 
 
-gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'html', 'scripts', 'icons', 'mailer', 'img'));
+gulp.task('default', gulp.parallel('watch', 'server', 'styles', 'html', 'scripts', 'icons', 'mailer', 'images'));
